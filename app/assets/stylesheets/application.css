@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap
+ *= require bootstrap-datetimepicker
+ *= require_tree .
+ *= require_self
+ */
+
+.margin-bottom{
+    margin-bottom: 20px;
+}
+
+#agreement_agreement_doc{
+	position: absolute;
+    top: 0px;
+    left: 0;
+    opacity: 0;
+    width: 34%;
+    height: 100%;
+}
+
+.file-upload{
+	border-style: dashed;
+    padding: 20px;
+    border-color: #00e6ac;
+    text-align: center;
+}
+.file-field{
+	margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.glyphicon-upload:before {
+    content: "\e027";
+    color: #00e6ac;
+    font-size: 18px;
+}
+span.file-font{
+    font-size: 18px;
+    color: #00e6ac;
+}

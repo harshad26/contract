@@ -1,0 +1,35 @@
+<div class="page-header">
+  <h1>Contratos</h1>
+</div>
+<%= image_tag "Coffee-l.jpg", class: "img-responsive", style: "width: 100%;" %>
+<br>
+<%= link_to 'Novo Contrato', new_agreement_path, :class => 'btn btn-primary pull-right' %>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Objeto</th>
+      <th>Fornecedor</th>
+      <th>Data de Execucao</th>
+      <th>Status</th>
+      <th>Vr. Contrato</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @agreements.each do |agreement| %>
+      <tr>
+        <td><%= agreement.object %></td>
+        <td><%= agreement.provider %></td>
+        <td><%= agreement.start_date %></td>
+        <td><%= agreement.status.try(:capitalize) %></td>
+        <td><%= agreement.amount %></td>
+        <td>
+          <%= link_to "Exposição", agreement_path(agreement), :class => 'btn btn-info btn-xs' %>
+          <%= link_to "Editar", edit_agreement_path(agreement), :class => 'btn btn-default btn-xs' %>
+          <%= link_to "Excluir", agreement_path(agreement), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
