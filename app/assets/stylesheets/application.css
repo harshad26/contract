@@ -49,3 +49,6 @@ span.file-font{
     font-size: 18px;
     color: #00e6ac;
 }
+.file-name{
+    margin-left: 15px;
+}

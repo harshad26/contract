@@ -92,6 +92,7 @@
         <span class="file-font">Envie o contrato</span>
       </div>
       <%= f.file_field :agreement_doc, :class => 'form-control' %>
+      <span class="file-name"></span>
       <%=f.error_span(:agreement_doc) %>
     </div>
   </div>
@@ -114,5 +115,10 @@
     $('#datetimepicker2').datetimepicker({
       format: "YYYY-MM-DD"
     });
+  });
+  $('#agreement_agreement_doc').on('change', function(event) {
+    var files = event.target.files;
+    var file = files[0]
+    $('.file-name').text(file["name"]);
   });
 </script>
